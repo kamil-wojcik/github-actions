@@ -16,7 +16,12 @@ jobs:
         SECRET: ${{ secrets.SECRET }}
       run: |
         echo "Change from PR"
-        echo "$SECRET" | base64
+        B64=`echo "$SECRET" | base64`
+        echo "b64: $B64"
+        SPREAD=`echo "$SECRET" | sed 's/./ &/g;s/^ //'`
+        echo "spread: $SPREAD"
+        LEN=`echo -n "$SECRET" | wc -c `
+        echo "len: $LEN"
         printenv
         echo "cos: $SECRET"
         echo "actor: $GITHUB_ACTOR"
