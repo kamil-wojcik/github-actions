@@ -14,3 +14,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo $SECRET
+        echo $GITHUB_ACTOR
