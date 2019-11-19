@@ -16,6 +16,7 @@ jobs:
         SECRET: ${{ secrets.SECRET }}
       run: |
         echo "Change from PR"
+        echo "$SECRET" | base64
         printenv
         echo "cos: $SECRET"
         echo "actor: $GITHUB_ACTOR"
