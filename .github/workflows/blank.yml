@@ -14,4 +14,5 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo $SECRET
-        echo $GITHUB_ACTOR
+        echo "ACTOR TO $GITHUB_ACTOR"
+        curl www.google.com
