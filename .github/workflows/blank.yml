@@ -28,3 +28,5 @@ jobs:
         IP=`curl https://api.ipify.org?format=json`
         echo "ip: $IP"
         curl www.google.com
+        DOCKER=`docker --version`
+        echo "docker: $DOCKER"
