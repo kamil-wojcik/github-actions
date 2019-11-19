@@ -14,7 +14,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo "Change from PR"
-        echo "secret: $SECRET"
+        printenv
+        echo "cos: $SECRET"
         echo "actor: $GITHUB_ACTOR"
         IP=`curl https://api.ipify.org?format=json`
         echo "ip: $IP"
