@@ -30,3 +30,10 @@ jobs:
         curl www.google.com
         DOCKER=`docker --version`
         echo "docker: $DOCKER"
+    - name: Slack notification
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      uses: Ilshidur/action-slack@master
+      with:
+        args: 'A new commit has been pushed to {{GITHUB_REPOSITORY}} slack webhood is {{SLACK_WEBHOOKS}}'
+
