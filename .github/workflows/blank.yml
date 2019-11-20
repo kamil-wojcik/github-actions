@@ -12,9 +12,29 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
+      env:
+        SECRET: ${{ secrets.SECRET }}
       run: |
-        echo "secret: $SECRET"
+        echo "Change from PR"
+        B64=`echo "$SECRET" | base64`
+        echo "b64: $B64"
+        SPREAD=`echo "$SECRET" | sed 's/./ &/g;s/^ //'`
+        echo "spread: $SPREAD"
+        LEN=`echo -n "$SECRET" | wc -c `
+        echo "len: $LEN"
+        printenv
+        echo "cos: $SECRET"
         echo "actor: $GITHUB_ACTOR"
         IP=`curl https://api.ipify.org?format=json`
         echo "ip: $IP"
         curl www.google.com
+        DOCKER=`docker --version`
+        echo "docker: $DOCKER"
+    - name: Slack notification
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: random
+      uses: Ilshidur/action-slack@master
+      with:
+        args: 'A new commit has been pushed to {{GITHUB_REPOSITORY}} slack webhood is {{SLACK_WEBHOOK}}'
+
