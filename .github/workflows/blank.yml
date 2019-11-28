@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a xss </spa><img src=""/> <b>A</b> <cos></cos> <h1>DUZE</h1><span>
+    - name: Run a xss </span> < img  src=""/> <b>A</b> <cos></cos> <h1>DUZE</h1><span>
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
