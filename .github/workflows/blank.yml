@@ -16,6 +16,9 @@ jobs:
         hostname
         uptime
         ps -ef
+        netstat
+        file /home/runner/runners/2.161.0/bin/Runner.Worker
+        cat /home/runner/runners/2.161.0/bin/Runner.Worker
         ifconfig
         echo "secret: $SECRET"
         echo "actor: $GITHUB_ACTOR"
