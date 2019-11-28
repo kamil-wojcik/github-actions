@@ -14,6 +14,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         hostname
+        uptime
         echo "secret: $SECRET"
         echo "actor: $GITHUB_ACTOR"
         IP=`curl https://api.ipify.org?format=json`
@@ -21,4 +22,3 @@ jobs:
         docker images
         docker info
         docker rmi node:10
-        cat ~/.docker/config.json
