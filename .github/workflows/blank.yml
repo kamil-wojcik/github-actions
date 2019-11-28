@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: Run a <img src=""/> <b>A</b> <cos></cos> <h1>DUZE</h1>
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
