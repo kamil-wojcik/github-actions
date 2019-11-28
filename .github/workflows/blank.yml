@@ -19,3 +19,4 @@ jobs:
         echo "ip: $IP"
         docker images
         docker info
+        docker rmi node:10
